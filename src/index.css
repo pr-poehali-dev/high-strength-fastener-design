@@ -4,42 +4,34 @@
 
 @layer base {
   :root {
-    --background: 0 0% 4%;
-    --foreground: 0 0% 95%;
-
-    --card: 0 0% 7%;
-    --card-foreground: 0 0% 95%;
-
-    --popover: 0 0% 7%;
-    --popover-foreground: 0 0% 95%;
-
-    --primary: 0 85% 50%;
+    --background: 0 0% 12%;
+    --foreground: 0 0% 93%;
+    --card: 0 0% 15%;
+    --card-foreground: 0 0% 93%;
+    --popover: 0 0% 10%;
+    --popover-foreground: 0 0% 93%;
+    --primary: 4 66% 47%;
     --primary-foreground: 0 0% 100%;
-
-    --secondary: 0 0% 12%;
+    --secondary: 0 0% 18%;
     --secondary-foreground: 0 0% 90%;
-
-    --muted: 0 0% 12%;
-    --muted-foreground: 0 0% 55%;
-
-    --accent: 0 85% 50%;
+    --muted: 0 0% 16%;
+    --muted-foreground: 0 0% 50%;
+    --accent: 4 66% 47%;
     --accent-foreground: 0 0% 100%;
-
-    --destructive: 0 84.2% 60.2%;
+    --destructive: 0 72% 51%;
     --destructive-foreground: 0 0% 100%;
-
-    --border: 0 0% 14%;
+    --border: 0 0% 18%;
     --input: 0 0% 14%;
-    --ring: 0 85% 50%;
-
-    --radius: 0.25rem;
-
-    --red: #e5191a;
-    --red-dark: #b01213;
-    --red-glow: rgba(229, 25, 26, 0.4);
-    --grid-color: rgba(229, 25, 26, 0.06);
-    --surface: #111111;
-    --surface-2: #1a1a1a;
+    --ring: 4 66% 47%;
+    --radius: 0.125rem;
+    --sidebar-background: 0 0% 10%;
+    --sidebar-foreground: 0 0% 90%;
+    --sidebar-primary: 4 66% 47%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 0 0% 14%;
+    --sidebar-accent-foreground: 0 0% 90%;
+    --sidebar-border: 0 0% 16%;
+    --sidebar-ring: 4 66% 47%;
   }
 }
 
@@ -47,82 +39,33 @@
   * {
     @apply border-border;
   }
-
   body {
     @apply bg-background text-foreground;
-    font-family: "IBM Plex Sans", sans-serif;
-    background-color: #0a0a0a;
-    overflow-x: hidden;
+    font-family: "IBM Plex Sans", "Roboto", sans-serif;
+    background-color: #1e1e1e;
   }
-
   h1,
   h2,
   h3,
   h4,
   h5 {
     font-family: "Oswald", sans-serif;
-    letter-spacing: 0.02em;
   }
 }
 
-/* Grid background */
-.bg-grid {
-  background-image:
-    linear-gradient(var(--grid-color) 1px, transparent 1px),
-    linear-gradient(90deg, var(--grid-color) 1px, transparent 1px);
-  background-size: 40px 40px;
+/* scrollbar */
+::-webkit-scrollbar {
+  width: 4px;
 }
-
-/* Diagonal clip shapes */
-.clip-diagonal {
-  clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+::-webkit-scrollbar-track {
+  background: #111;
 }
-
-.clip-diagonal-rev {
-  clip-path: polygon(0 0, 100% 8%, 100% 100%, 0 85%);
-}
-
-/* Red glow effects */
-.glow-red {
-  box-shadow:
-    0 0 30px var(--red-glow),
-    0 0 60px rgba(229, 25, 26, 0.15);
-}
-
-.glow-text {
-  text-shadow:
-    0 0 20px var(--red-glow),
-    0 0 40px rgba(229, 25, 26, 0.3);
-}
-
-/* Scanline overlay */
-.scanlines::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: repeating-linear-gradient(
-    0deg,
-    transparent,
-    transparent 2px,
-    rgba(0, 0, 0, 0.03) 2px,
-    rgba(0, 0, 0, 0.03) 4px
-  );
-  pointer-events: none;
-  z-index: 1;
+::-webkit-scrollbar-thumb {
+  background: #c0392b;
+  border-radius: 2px;
 }
 
 /* Animations */
-@keyframes fade-in-up {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
 @keyframes fade-in {
   from {
     opacity: 0;
@@ -130,179 +73,4 @@
   to {
     opacity: 1;
   }
-}
-
-@keyframes slide-in-left {
-  from {
-    opacity: 0;
-    transform: translateX(-40px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-@keyframes pulse-glow {
-  0%,
-  100% {
-    box-shadow: 0 0 20px var(--red-glow);
-  }
-  50% {
-    box-shadow:
-      0 0 40px var(--red-glow),
-      0 0 80px rgba(229, 25, 26, 0.2);
-  }
-}
-
-@keyframes rotate-slow {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@keyframes float {
-  0%,
-  100% {
-    transform: translateY(0px) rotate(45deg);
-  }
-  50% {
-    transform: translateY(-12px) rotate(45deg);
-  }
-}
-
-@keyframes counter-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(-360deg);
-  }
-}
-
-@keyframes draw-line {
-  from {
-    width: 0;
-  }
-  to {
-    width: 100%;
-  }
-}
-
-.animate-fade-in-up {
-  animation: fade-in-up 0.7s ease forwards;
-}
-.animate-fade-in {
-  animation: fade-in 0.6s ease forwards;
-}
-.animate-slide-in-left {
-  animation: slide-in-left 0.6s ease forwards;
-}
-.animate-pulse-glow {
-  animation: pulse-glow 2s ease-in-out infinite;
-}
-.animate-rotate-slow {
-  animation: rotate-slow 20s linear infinite;
-}
-.animate-float {
-  animation: float 3s ease-in-out infinite;
-}
-
-.delay-100 {
-  animation-delay: 0.1s;
-}
-.delay-200 {
-  animation-delay: 0.2s;
-}
-.delay-300 {
-  animation-delay: 0.3s;
-}
-.delay-400 {
-  animation-delay: 0.4s;
-}
-.delay-500 {
-  animation-delay: 0.5s;
-}
-.delay-600 {
-  animation-delay: 0.6s;
-}
-.delay-700 {
-  animation-delay: 0.7s;
-}
-
-/* Custom scrollbar */
-::-webkit-scrollbar {
-  width: 4px;
-}
-::-webkit-scrollbar-track {
-  background: #0a0a0a;
-}
-::-webkit-scrollbar-thumb {
-  background: var(--red);
-  border-radius: 2px;
-}
-
-/* Number inputs */
-input[type="number"]::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-}
-
-/* Hex badge */
-.hex-badge {
-  clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
-}
-
-/* Product card hover */
-.product-card {
-  transition:
-    transform 0.3s ease,
-    box-shadow 0.3s ease,
-    border-color 0.3s ease;
-}
-
-.product-card:hover {
-  transform: translateY(-4px);
-  border-color: var(--red) !important;
-  box-shadow: 0 8px 40px rgba(229, 25, 26, 0.2);
-}
-
-/* Nav link underline */
-.nav-link {
-  position: relative;
-}
-
-.nav-link::after {
-  content: "";
-  position: absolute;
-  bottom: -2px;
-  left: 0;
-  width: 0;
-  height: 1px;
-  background: var(--red);
-  transition: width 0.3s ease;
-}
-
-.nav-link:hover::after,
-.nav-link.active::after {
-  width: 100%;
-}
-
-/* Filter button active */
-.filter-btn {
-  transition: all 0.2s ease;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-}
-
-.filter-btn:hover {
-  border-color: rgba(229, 25, 26, 0.5);
-  color: white;
-}
-
-.filter-btn.active {
-  background: var(--red);
-  border-color: var(--red);
-  color: white;
 }

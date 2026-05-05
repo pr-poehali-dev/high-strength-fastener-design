@@ -75,7 +75,7 @@ export default function Index() {
   const sendRequest = () => { if (requestForm.name && requestForm.phone) { setRequestSent(true); } };
 
   return (
-    <div className="min-h-screen bg-[#1e1e1e] text-white font-body">
+    <div className="min-h-screen bg-white text-gray-900 font-body">
 
       {/* ── TOPBAR ── */}
       <div className="bg-[#111] border-b border-white/5 hidden md:block">
@@ -348,14 +348,14 @@ export default function Index() {
             </section>
 
             {/* CATEGORIES */}
-            <section className="py-14 bg-[#1e1e1e]">
+            <section className="py-14 bg-white">
               <div className="max-w-7xl mx-auto px-6">
                 <div className="flex items-center justify-between mb-8">
                   <div>
-                    <h2 className="font-display text-3xl font-bold text-white">Каталог продукции</h2>
-                    <p className="text-white/40 text-sm mt-1">Широкий ассортимент крепёжных изделий</p>
+                    <h2 className="font-display text-3xl font-bold text-gray-900">Каталог продукции</h2>
+                    <p className="text-gray-500 text-sm mt-1">Широкий ассортимент крепёжных изделий</p>
                   </div>
-                  <button onClick={() => setPage("catalog")} className="hidden md:flex items-center gap-2 text-[#c0392b] hover:text-white transition-colors text-sm font-medium">
+                  <button onClick={() => setPage("catalog")} className="hidden md:flex items-center gap-2 text-[#c0392b] hover:text-gray-900 transition-colors text-sm font-medium">
                     Все категории <Icon name="ArrowRight" size={16} />
                   </button>
                 </div>
@@ -363,12 +363,12 @@ export default function Index() {
                 <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
                   {CATEGORIES.map((cat, i) => (
                     <button key={i} onClick={() => setPage("catalog")}
-                      className="bg-[#252525] hover:bg-[#2d2d2d] border border-white/5 hover:border-[#c0392b]/40 p-5 text-left group transition-all">
+                      className="bg-white hover:bg-gray-50 border border-gray-200 hover:border-[#c0392b]/40 p-5 text-left group transition-all">
                       <div className="w-10 h-10 bg-[#c0392b]/15 border border-[#c0392b]/25 group-hover:bg-[#c0392b]/25 flex items-center justify-center mb-3 transition-colors">
                         <Icon name={cat.icon as string} size={18} className="text-[#c0392b]" />
                       </div>
-                      <h3 className="font-medium text-white text-sm leading-snug mb-1">{cat.name}</h3>
-                      <p className="text-white/30 text-xs leading-snug mb-2">{cat.sub}</p>
+                      <h3 className="font-medium text-gray-900 text-sm leading-snug mb-1">{cat.name}</h3>
+                      <p className="text-gray-500 text-xs leading-snug mb-2">{cat.sub}</p>
                       <span className="text-[#c0392b]/60 text-xs font-mono">{cat.count} позиций</span>
                     </button>
                   ))}
@@ -377,9 +377,9 @@ export default function Index() {
             </section>
 
             {/* ADVANTAGES */}
-            <section className="py-14 bg-[#171717] border-y border-white/5">
+            <section className="py-14 bg-gray-50 border-y border-gray-200">
               <div className="max-w-7xl mx-auto px-6">
-                <h2 className="font-display text-3xl font-bold text-white mb-8 text-center">Почему выбирают нас</h2>
+                <h2 className="font-display text-3xl font-bold text-gray-900 mb-8 text-center">Почему выбирают нас</h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                   {ADVANTAGES.map((a, i) => (
                     <div key={i} className="flex flex-col items-start gap-3">
@@ -387,8 +387,8 @@ export default function Index() {
                         <Icon name={a.icon as string} size={22} className="text-white" />
                       </div>
                       <div>
-                        <h3 className="font-display font-bold text-white text-base mb-1.5">{a.title}</h3>
-                        <p className="text-white/40 text-sm leading-relaxed">{a.text}</p>
+                        <h3 className="font-display font-bold text-gray-900 text-base mb-1.5">{a.title}</h3>
+                        <p className="text-gray-500 text-sm leading-relaxed">{a.text}</p>
                       </div>
                     </div>
                   ))}
@@ -397,37 +397,37 @@ export default function Index() {
             </section>
 
             {/* POPULAR PRODUCTS */}
-            <section className="py-14 bg-[#1e1e1e]">
+            <section className="py-14 bg-white">
               <div className="max-w-7xl mx-auto px-6">
                 <div className="flex items-center justify-between mb-8">
                   <div>
-                    <h2 className="font-display text-3xl font-bold text-white">Популярные товары</h2>
-                    <p className="text-white/40 text-sm mt-1">Часто заказываемые позиции</p>
+                    <h2 className="font-display text-3xl font-bold text-gray-900">Популярные товары</h2>
+                    <p className="text-gray-500 text-sm mt-1">Часто заказываемые позиции</p>
                   </div>
-                  <button onClick={() => setPage("catalog")} className="hidden md:flex items-center gap-2 text-[#c0392b] hover:text-white transition-colors text-sm font-medium">
+                  <button onClick={() => setPage("catalog")} className="hidden md:flex items-center gap-2 text-[#c0392b] hover:text-gray-900 transition-colors text-sm font-medium">
                     Весь каталог <Icon name="ArrowRight" size={16} />
                   </button>
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
                   {PRODUCTS.slice(0, 8).map(p => (
-                    <div key={p.id} className="bg-[#252525] border border-white/5 hover:border-[#c0392b]/30 transition-all group">
+                    <div key={p.id} className="bg-white border border-gray-200 hover:border-[#c0392b]/30 transition-all group">
                       {/* Product image area */}
-                      <div className="h-36 bg-[#1a1a1a] border-b border-white/5 flex items-center justify-center">
+                      <div className="h-36 bg-gray-100 border-b border-gray-200 flex items-center justify-center">
                         <span className="text-5xl">{p.img}</span>
                       </div>
                       <div className="p-4">
-                        <p className="text-xs text-white/30 mb-1">{p.cat}</p>
-                        <h3 className="text-sm text-white leading-snug mb-3 min-h-[40px]">{p.name}</h3>
+                        <p className="text-xs text-gray-500 mb-1">{p.cat}</p>
+                        <h3 className="text-sm text-gray-900 leading-snug mb-3 min-h-[40px]">{p.name}</h3>
                         <div className="flex items-end justify-between mb-3">
                           <div>
                             <span className="font-display text-lg font-bold text-[#c0392b]">{p.price.toFixed(2)} ₽</span>
-                            <span className="text-white/30 text-xs ml-1">/{p.unit}</span>
+                            <span className="text-gray-500 text-xs ml-1">/{p.unit}</span>
                           </div>
-                          <span className="text-xs text-[#2ecc71] bg-[#2ecc71]/10 px-2 py-0.5">В наличии</span>
+                          <span className="text-xs text-green-600 bg-[#2ecc71]/10 px-2 py-0.5">В наличии</span>
                         </div>
                         {cart[p.id] ? (
                           <div className="flex items-center gap-2">
-                            <button onClick={() => dec(p.id)} className="flex-1 h-8 border border-white/15 hover:border-[#c0392b] text-white/60 hover:text-white flex items-center justify-center text-sm transition-colors">−</button>
+                            <button onClick={() => dec(p.id)} className="flex-1 h-8 border border-gray-300 hover:border-[#c0392b] text-gray-600 hover:text-gray-900 flex items-center justify-center text-sm transition-colors">−</button>
                             <span className="font-mono text-sm w-6 text-center">{cart[p.id]}</span>
                             <button onClick={() => add(p.id)} className="flex-1 h-8 bg-[#c0392b] hover:bg-[#a93226] text-white flex items-center justify-center text-sm transition-colors">+</button>
                           </div>
@@ -444,12 +444,12 @@ export default function Index() {
             </section>
 
             {/* REQUEST FORM */}
-            <section className="py-14 bg-[#171717] border-y border-white/5">
+            <section className="py-14 bg-gray-50 border-y border-gray-200">
               <div className="max-w-7xl mx-auto px-6">
                 <div className="grid md:grid-cols-2 gap-12 items-center">
                   <div>
-                    <h2 className="font-display text-3xl font-bold text-white mb-3">Отправьте запрос</h2>
-                    <p className="text-white/45 text-sm leading-relaxed mb-6">
+                    <h2 className="font-display text-3xl font-bold text-gray-900 mb-3">Отправьте запрос</h2>
+                    <p className="text-gray-600 text-sm leading-relaxed mb-6">
                       Если не нашли нужную позицию или хотите уточнить цену — оставьте заявку. Наш менеджер свяжется с вами и поможет подобрать крепёж под вашу задачу.
                     </p>
                     <div className="space-y-4">
@@ -458,34 +458,34 @@ export default function Index() {
                         { icon: "CheckCircle", text: "Рассчитаем стоимость партии" },
                         { icon: "CheckCircle", text: "Оформим документы для юрлиц" },
                       ].map((f, i) => (
-                        <div key={i} className="flex items-center gap-3 text-sm text-white/55">
+                        <div key={i} className="flex items-center gap-3 text-sm text-gray-600">
                           <Icon name={f.icon as string} size={16} className="text-[#c0392b] flex-shrink-0" />
                           {f.text}
                         </div>
                       ))}
                     </div>
                   </div>
-                  <div className="bg-[#1e1e1e] border border-white/8 p-6">
+                  <div className="bg-white border border-gray-200 p-6">
                     {requestSent ? (
                       <div className="text-center py-8">
                         <Icon name="CheckCircle" size={48} className="text-[#c0392b] mx-auto mb-4" />
-                        <h3 className="font-display text-xl font-bold text-white mb-2">Заявка принята!</h3>
-                        <p className="text-white/45 text-sm">Свяжемся с вами в течение 2 часов</p>
+                        <h3 className="font-display text-xl font-bold text-gray-900 mb-2">Заявка принята!</h3>
+                        <p className="text-gray-600 text-sm">Свяжемся с вами в течение 2 часов</p>
                       </div>
                     ) : (
                       <>
-                        <h3 className="font-display text-lg font-bold text-white mb-4">Оставить заявку</h3>
+                        <h3 className="font-display text-lg font-bold text-gray-900 mb-4">Оставить заявку</h3>
                         <div className="space-y-3">
                           <input type="text" placeholder="Ваше имя *" value={requestForm.name} onChange={e => setRequestForm({ ...requestForm, name: e.target.value })}
-                            className="w-full bg-[#111] border border-white/8 focus:border-[#c0392b]/50 text-white placeholder-white/20 px-4 py-2.5 text-sm outline-none transition-colors" />
+                            className="w-full bg-gray-50 border border-gray-300 focus:border-[#c0392b]/50 text-gray-900 placeholder-gray-400 px-4 py-2.5 text-sm outline-none transition-colors" />
                           <input type="tel" placeholder="Телефон *" value={requestForm.phone} onChange={e => setRequestForm({ ...requestForm, phone: e.target.value })}
-                            className="w-full bg-[#111] border border-white/8 focus:border-[#c0392b]/50 text-white placeholder-white/20 px-4 py-2.5 text-sm outline-none transition-colors" />
+                            className="w-full bg-gray-50 border border-gray-300 focus:border-[#c0392b]/50 text-gray-900 placeholder-gray-400 px-4 py-2.5 text-sm outline-none transition-colors" />
                           <textarea rows={3} placeholder="Комментарий или список нужных позиций" value={requestForm.comment} onChange={e => setRequestForm({ ...requestForm, comment: e.target.value })}
-                            className="w-full bg-[#111] border border-white/8 focus:border-[#c0392b]/50 text-white placeholder-white/20 px-4 py-2.5 text-sm outline-none transition-colors resize-none" />
+                            className="w-full bg-gray-50 border border-gray-300 focus:border-[#c0392b]/50 text-gray-900 placeholder-gray-400 px-4 py-2.5 text-sm outline-none transition-colors resize-none" />
                           <button onClick={sendRequest} className="w-full bg-[#c0392b] hover:bg-[#a93226] text-white py-3 text-sm font-medium transition-colors">
                             Отправить заявку
                           </button>
-                          <p className="text-white/20 text-xs text-center">Нажимая кнопку, вы соглашаетесь с политикой конфиденциальности</p>
+                          <p className="text-gray-400 text-xs text-center">Нажимая кнопку, вы соглашаетесь с политикой конфиденциальности</p>
                         </div>
                       </>
                     )}
@@ -495,7 +495,7 @@ export default function Index() {
             </section>
 
             {/* CONTACTS STRIP */}
-            <section className="py-10 bg-[#1e1e1e]">
+            <section className="py-10 bg-white">
               <div className="max-w-7xl mx-auto px-6">
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                   {[
@@ -503,13 +503,13 @@ export default function Index() {
                     { icon: "MapPin", title: "Москва, ул. Складская, 14", sub: "Самовывоз, склад открыт в рабочие дни" },
                     { icon: "Mail", title: "info@metallotechnik.ru", sub: "Ответим в течение 2 часов" },
                   ].map((c, i) => (
-                    <div key={i} className="flex items-center gap-4 p-5 bg-[#252525] border border-white/5">
+                    <div key={i} className="flex items-center gap-4 p-5 bg-white border border-gray-200">
                       <div className="w-10 h-10 bg-[#c0392b] flex items-center justify-center flex-shrink-0">
                         <Icon name={c.icon as string} size={18} className="text-white" />
                       </div>
                       <div>
-                        <p className="text-white font-medium text-sm">{c.title}</p>
-                        <p className="text-white/35 text-xs mt-0.5">{c.sub}</p>
+                        <p className="text-gray-900 font-medium text-sm">{c.title}</p>
+                        <p className="text-gray-500 text-xs mt-0.5">{c.sub}</p>
                       </div>
                     </div>
                   ))}
@@ -523,48 +523,48 @@ export default function Index() {
         {page === "catalog" && (
           <div className="max-w-7xl mx-auto px-6 py-10">
             <div className="mb-8">
-              <h1 className="font-display text-3xl font-bold text-white mb-1">Каталог товаров</h1>
-              <p className="text-white/40 text-sm">Крепёж и метизы в наличии на складе в Москве</p>
+              <h1 className="font-display text-3xl font-bold text-gray-900 mb-1">Каталог товаров</h1>
+              <p className="text-gray-500 text-sm">Крепёж и метизы в наличии на складе в Москве</p>
             </div>
 
             {/* Search + filter */}
             <div className="flex flex-col sm:flex-row gap-3 mb-6">
               <div className="relative flex-1">
-                <Icon name="Search" size={16} className="absolute left-3 top-1/2 -translate-y-1/2 text-white/25" />
+                <Icon name="Search" size={16} className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" />
                 <input type="text" placeholder="Поиск по каталогу..." value={search} onChange={e => setSearch(e.target.value)}
-                  className="w-full bg-[#252525] border border-white/8 focus:border-[#c0392b]/40 text-white placeholder-white/20 pl-9 pr-4 py-2.5 text-sm outline-none transition-colors" />
+                  className="w-full bg-gray-50 border border-gray-200 focus:border-[#c0392b]/40 text-gray-900 placeholder-gray-400 pl-9 pr-4 py-2.5 text-sm outline-none transition-colors" />
               </div>
               <div className="flex gap-2 flex-wrap">
                 {cats.map(c => (
                   <button key={c} onClick={() => setFilterCat(c)}
-                    className={`px-4 py-2.5 text-xs font-medium transition-all border ${filterCat === c ? "bg-[#c0392b] border-[#c0392b] text-white" : "border-white/10 text-white/50 hover:text-white hover:border-white/25 bg-[#252525]"}`}>
+                    className={`px-4 py-2.5 text-xs font-medium transition-all border ${filterCat === c ? "bg-[#c0392b] border-[#c0392b] text-white" : "border-gray-300 text-gray-500 hover:text-gray-900 hover:border-gray-400 bg-white"}`}>
                     {c}
                   </button>
                 ))}
               </div>
             </div>
 
-            <p className="text-white/30 text-xs mb-4 font-mono">Найдено: {filtered.length} позиций</p>
+            <p className="text-gray-400 text-xs mb-4 font-mono">Найдено: {filtered.length} позиций</p>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
               {filtered.map(p => (
-                <div key={p.id} className="bg-[#252525] border border-white/5 hover:border-[#c0392b]/30 transition-all">
-                  <div className="h-36 bg-[#1a1a1a] border-b border-white/5 flex items-center justify-center">
+                <div key={p.id} className="bg-white border border-gray-200 hover:border-[#c0392b]/30 transition-all">
+                  <div className="h-36 bg-gray-100 border-b border-gray-200 flex items-center justify-center">
                     <span className="text-5xl">{p.img}</span>
                   </div>
                   <div className="p-4">
-                    <p className="text-xs text-white/30 mb-1">{p.cat}</p>
-                    <h3 className="text-sm text-white leading-snug mb-3 min-h-[40px]">{p.name}</h3>
+                    <p className="text-xs text-gray-500 mb-1">{p.cat}</p>
+                    <h3 className="text-sm text-gray-900 leading-snug mb-3 min-h-[40px]">{p.name}</h3>
                     <div className="flex items-end justify-between mb-3">
                       <div>
                         <span className="font-display text-lg font-bold text-[#c0392b]">{p.price.toFixed(2)} ₽</span>
-                        <span className="text-white/30 text-xs ml-1">/{p.unit}</span>
+                        <span className="text-gray-500 text-xs ml-1">/{p.unit}</span>
                       </div>
-                      <span className="text-xs text-[#2ecc71] bg-[#2ecc71]/10 px-2 py-0.5">В наличии</span>
+                      <span className="text-xs text-green-600 bg-[#2ecc71]/10 px-2 py-0.5">В наличии</span>
                     </div>
                     {cart[p.id] ? (
                       <div className="flex items-center gap-2">
-                        <button onClick={() => dec(p.id)} className="flex-1 h-8 border border-white/15 hover:border-[#c0392b] text-white/60 hover:text-white flex items-center justify-center text-sm transition-colors">−</button>
+                        <button onClick={() => dec(p.id)} className="flex-1 h-8 border border-gray-300 hover:border-[#c0392b] text-gray-600 hover:text-gray-900 flex items-center justify-center text-sm transition-colors">−</button>
                         <span className="font-mono text-sm w-6 text-center">{cart[p.id]}</span>
                         <button onClick={() => add(p.id)} className="flex-1 h-8 bg-[#c0392b] hover:bg-[#a93226] text-white flex items-center justify-center text-sm transition-colors">+</button>
                       </div>
@@ -583,11 +583,11 @@ export default function Index() {
         {/* ════════════ ABOUT ════════════ */}
         {page === "about" && (
           <div className="max-w-7xl mx-auto px-6 py-12">
-            <h1 className="font-display text-4xl font-bold text-white mb-2">О компании</h1>
-            <p className="text-white/40 text-sm mb-10">МЕТАЛЛОТЕХНИК — надёжный поставщик крепежа</p>
+            <h1 className="font-display text-4xl font-bold text-gray-900 mb-2">О компании</h1>
+            <p className="text-gray-500 text-sm mb-10">МЕТАЛЛОТЕХНИК — надёжный поставщик крепежа</p>
             <div className="grid md:grid-cols-2 gap-12 mb-12">
-              <div className="space-y-4 text-white/50 text-sm leading-relaxed">
-                <p>Компания <strong className="text-white">«Металлотехник»</strong> работает на рынке крепёжных изделий с 2009 года. За это время мы стали надёжным партнёром для сотен предприятий из сферы строительства, машиностроения и промышленного производства.</p>
+              <div className="space-y-4 text-gray-600 text-sm leading-relaxed">
+                <p>Компания <strong className="text-gray-900">«Металлотехник»</strong> работает на рынке крепёжных изделий с 2009 года. За это время мы стали надёжным партнёром для сотен предприятий из сферы строительства, машиностроения и промышленного производства.</p>
                 <p>Мы поставляем крепёж напрямую с заводов-изготовителей из России, Германии, Тайваня и Китая — без посредников, что позволяет предлагать конкурентоспособные цены при гарантированном качестве.</p>
                 <p>Весь товар сертифицирован. На каждую партию предоставляются паспорта качества и сертификаты соответствия. Входной контроль — обязательный этап нашей работы.</p>
               </div>
@@ -598,16 +598,16 @@ export default function Index() {
                   { val: "5 000+", label: "Клиентов за 15 лет" },
                   { val: "24 ч", label: "Срок отгрузки" },
                 ].map((s, i) => (
-                  <div key={i} className="bg-[#252525] border border-white/5 p-6 hover:border-[#c0392b]/30 transition-colors">
+                  <div key={i} className="bg-white border border-gray-200 p-6 hover:border-[#c0392b]/30 transition-colors">
                     <div className="font-display text-3xl font-bold text-[#c0392b]">{s.val}</div>
-                    <div className="text-white/40 text-sm mt-1">{s.label}</div>
+                    <div className="text-gray-500 text-sm mt-1">{s.label}</div>
                   </div>
                 ))}
               </div>
             </div>
 
-            <div className="bg-[#252525] border border-white/5 p-8">
-              <h2 className="font-display text-2xl font-bold text-white mb-6">Наши преимущества</h2>
+            <div className="bg-white border border-gray-200 p-8">
+              <h2 className="font-display text-2xl font-bold text-gray-900 mb-6">Наши преимущества</h2>
               <div className="grid md:grid-cols-2 gap-5">
                 {ADVANTAGES.map((a, i) => (
                   <div key={i} className="flex gap-4">
@@ -615,8 +615,8 @@ export default function Index() {
                       <Icon name={a.icon as string} size={18} className="text-white" />
                     </div>
                     <div>
-                      <h3 className="font-medium text-white text-sm mb-1">{a.title}</h3>
-                      <p className="text-white/40 text-sm">{a.text}</p>
+                      <h3 className="font-medium text-gray-900 text-sm mb-1">{a.title}</h3>
+                      <p className="text-gray-500 text-sm">{a.text}</p>
                     </div>
                   </div>
                 ))}
@@ -628,46 +628,46 @@ export default function Index() {
         {/* ════════════ DELIVERY ════════════ */}
         {page === "delivery" && (
           <div className="max-w-7xl mx-auto px-6 py-12">
-            <h1 className="font-display text-4xl font-bold text-white mb-2">Доставка и оплата</h1>
-            <p className="text-white/40 text-sm mb-10">Работаем по всей России</p>
+            <h1 className="font-display text-4xl font-bold text-gray-900 mb-2">Доставка и оплата</h1>
+            <p className="text-gray-500 text-sm mb-10">Работаем по всей России</p>
             <div className="grid md:grid-cols-2 gap-8 mb-10">
-              <div className="bg-[#252525] border border-white/5 p-6">
+              <div className="bg-white border border-gray-200 p-6">
                 <div className="flex items-center gap-3 mb-5">
                   <div className="w-10 h-10 bg-[#c0392b] flex items-center justify-center">
                     <Icon name="Truck" size={18} className="text-white" />
                   </div>
-                  <h2 className="font-display text-xl font-bold text-white">Доставка</h2>
+                  <h2 className="font-display text-xl font-bold text-gray-900">Доставка</h2>
                 </div>
-                <div className="space-y-3 text-sm text-white/50">
+                <div className="space-y-3 text-sm text-gray-600">
                   {[
                     { t: "Самовывоз", d: "Бесплатно. Склад в Москве, ул. Складская, 14. Пн–Пт 9:00–18:00." },
                     { t: "Курьер по Москве", d: "от 500 ₽. Доставка в день заказа при заказе до 14:00." },
                     { t: "Транспортные компании", d: "СДЭК, Деловые Линии, ПЭК. Доставка по всей России." },
                     { t: "Почта России", d: "Для небольших отправлений в отдалённые регионы." },
                   ].map((d, i) => (
-                    <div key={i} className="border-b border-white/5 pb-3 last:border-0">
-                      <p className="text-white font-medium mb-0.5">{d.t}</p>
+                    <div key={i} className="border-b border-gray-200 pb-3 last:border-0">
+                      <p className="text-gray-900 font-medium mb-0.5">{d.t}</p>
                       <p>{d.d}</p>
                     </div>
                   ))}
                 </div>
               </div>
-              <div className="bg-[#252525] border border-white/5 p-6">
+              <div className="bg-white border border-gray-200 p-6">
                 <div className="flex items-center gap-3 mb-5">
                   <div className="w-10 h-10 bg-[#c0392b] flex items-center justify-center">
                     <Icon name="CreditCard" size={18} className="text-white" />
                   </div>
-                  <h2 className="font-display text-xl font-bold text-white">Оплата</h2>
+                  <h2 className="font-display text-xl font-bold text-gray-900">Оплата</h2>
                 </div>
-                <div className="space-y-3 text-sm text-white/50">
+                <div className="space-y-3 text-sm text-gray-600">
                   {[
                     { t: "Наличные", d: "При самовывозе или доставке курьером по Москве." },
                     { t: "Банковская карта", d: "Visa, Mastercard, МИР — онлайн или в офисе." },
                     { t: "Безналичный расчёт", d: "Для юридических лиц и ИП. НДС, все закрывающие документы." },
                     { t: "Постоплата", d: "Для постоянных клиентов — по договору." },
                   ].map((d, i) => (
-                    <div key={i} className="border-b border-white/5 pb-3 last:border-0">
-                      <p className="text-white font-medium mb-0.5">{d.t}</p>
+                    <div key={i} className="border-b border-gray-200 pb-3 last:border-0">
+                      <p className="text-gray-900 font-medium mb-0.5">{d.t}</p>
                       <p>{d.d}</p>
                     </div>
                   ))}
@@ -676,8 +676,8 @@ export default function Index() {
             </div>
             <div className="bg-[#c0392b]/10 border border-[#c0392b]/30 p-6 flex items-start gap-4">
               <Icon name="Info" size={20} className="text-[#c0392b] flex-shrink-0 mt-0.5" />
-              <p className="text-white/60 text-sm leading-relaxed">
-                <strong className="text-white">Бесплатная доставка</strong> при заказе от 50 000 ₽ по Москве и МО. Для регионов — уточняйте у менеджера. Крупные партии и постоянным клиентам — индивидуальные условия.
+              <p className="text-gray-600 text-sm leading-relaxed">
+                <strong className="text-gray-900">Бесплатная доставка</strong> при заказе от 50 000 ₽ по Москве и МО. Для регионов — уточняйте у менеджера. Крупные партии и постоянным клиентам — индивидуальные условия.
               </p>
             </div>
           </div>
@@ -686,8 +686,8 @@ export default function Index() {
         {/* ════════════ CONTACTS ════════════ */}
         {page === "contacts" && (
           <div className="max-w-7xl mx-auto px-6 py-12">
-            <h1 className="font-display text-4xl font-bold text-white mb-2">Контакты</h1>
-            <p className="text-white/40 text-sm mb-10">Свяжитесь с нами любым удобным способом</p>
+            <h1 className="font-display text-4xl font-bold text-gray-900 mb-2">Контакты</h1>
+            <p className="text-gray-500 text-sm mb-10">Свяжитесь с нами любым удобным способом</p>
             <div className="grid md:grid-cols-2 gap-10">
               <div className="space-y-6">
                 {[
@@ -696,36 +696,36 @@ export default function Index() {
                   { icon: "MapPin", label: "Адрес склада и офиса", val: "Москва, ул. Складская, д. 14", sub: "Самовывоз в рабочие дни" },
                   { icon: "Clock", label: "Режим работы", val: "Пн–Пт: 9:00–18:00", sub: "Суббота: 10:00–15:00" },
                 ].map((c, i) => (
-                  <div key={i} className="flex items-start gap-4 p-5 bg-[#252525] border border-white/5 hover:border-[#c0392b]/30 transition-colors">
+                  <div key={i} className="flex items-start gap-4 p-5 bg-white border border-gray-200 hover:border-[#c0392b]/30 transition-colors">
                     <div className="w-10 h-10 bg-[#c0392b] flex items-center justify-center flex-shrink-0">
                       <Icon name={c.icon as string} size={18} className="text-white" />
                     </div>
                     <div>
-                      <p className="text-white/35 text-xs mb-0.5">{c.label}</p>
-                      <p className="text-white font-medium text-sm">{c.val}</p>
-                      <p className="text-white/35 text-xs mt-0.5">{c.sub}</p>
+                      <p className="text-gray-500 text-xs mb-0.5">{c.label}</p>
+                      <p className="text-gray-900 font-medium text-sm">{c.val}</p>
+                      <p className="text-gray-500 text-xs mt-0.5">{c.sub}</p>
                     </div>
                   </div>
                 ))}
               </div>
-              <div className="bg-[#252525] border border-white/5 p-6">
+              <div className="bg-white border border-gray-200 p-6">
                 {requestSent ? (
                   <div className="text-center py-10">
                     <Icon name="CheckCircle" size={48} className="text-[#c0392b] mx-auto mb-4" />
-                    <h3 className="font-display text-xl font-bold text-white mb-2">Заявка принята!</h3>
-                    <p className="text-white/45 text-sm">Свяжемся с вами в течение 2 часов</p>
+                    <h3 className="font-display text-xl font-bold text-gray-900 mb-2">Заявка принята!</h3>
+                    <p className="text-gray-600 text-sm">Свяжемся с вами в течение 2 часов</p>
                     <button onClick={() => setRequestSent(false)} className="mt-4 text-[#c0392b] text-sm hover:underline">Отправить ещё</button>
                   </div>
                 ) : (
                   <>
-                    <h3 className="font-display text-xl font-bold text-white mb-4">Написать нам</h3>
+                    <h3 className="font-display text-xl font-bold text-gray-900 mb-4">Написать нам</h3>
                     <div className="space-y-3">
                       <input type="text" placeholder="Ваше имя *" value={requestForm.name} onChange={e => setRequestForm({ ...requestForm, name: e.target.value })}
-                        className="w-full bg-[#111] border border-white/8 focus:border-[#c0392b]/50 text-white placeholder-white/20 px-4 py-2.5 text-sm outline-none transition-colors" />
+                        className="w-full bg-gray-50 border border-gray-300 focus:border-[#c0392b]/50 text-gray-900 placeholder-gray-400 px-4 py-2.5 text-sm outline-none transition-colors" />
                       <input type="tel" placeholder="Телефон *" value={requestForm.phone} onChange={e => setRequestForm({ ...requestForm, phone: e.target.value })}
-                        className="w-full bg-[#111] border border-white/8 focus:border-[#c0392b]/50 text-white placeholder-white/20 px-4 py-2.5 text-sm outline-none transition-colors" />
+                        className="w-full bg-gray-50 border border-gray-300 focus:border-[#c0392b]/50 text-gray-900 placeholder-gray-400 px-4 py-2.5 text-sm outline-none transition-colors" />
                       <textarea rows={4} placeholder="Комментарий..." value={requestForm.comment} onChange={e => setRequestForm({ ...requestForm, comment: e.target.value })}
-                        className="w-full bg-[#111] border border-white/8 focus:border-[#c0392b]/50 text-white placeholder-white/20 px-4 py-2.5 text-sm outline-none transition-colors resize-none" />
+                        className="w-full bg-gray-50 border border-gray-300 focus:border-[#c0392b]/50 text-gray-900 placeholder-gray-400 px-4 py-2.5 text-sm outline-none transition-colors resize-none" />
                       <button onClick={sendRequest} className="w-full bg-[#c0392b] hover:bg-[#a93226] text-white py-3 text-sm font-medium transition-colors">
                         Отправить сообщение
                       </button>
